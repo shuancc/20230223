@@ -1,0 +1,77 @@
+<style>
+#result1 {
+	background-color: red;
+	background-size: 100px 100px;
+	width: 100px;
+	height:100px;
+	color:white;
+	font-weight: bold;
+	font-size: 20px;
+
+}
+#result2 {
+	background-color: blue;
+	background-size: 100px 100px;
+	width: 100px;
+	height:100px;
+	color:white;
+	font-weight: bold;
+	font-size: 20px;
+
+}
+
+button{
+	width: 300px;
+	height: 300px;
+	size: 30px;
+}
+
+#cancel {
+	background-color: rgba(0,255,0,0.5);
+	color: white;
+}
+
+</style>
+
+<div id='result1'>
+</div>
+
+<div id='result2'>
+</div>
+
+<div>
+	<label for="x">新垣結衣</label>
+	<input type="number" name="x" id="x"><div>
+		<br>
+	<label for="x">NewJeans</label>
+
+	<input type="number" name="y" id="y">
+	<br>
+	<button id="btn" onclick="show()">顯示最後投票結果</button>
+	<button id="cancel" onclick="cancel()">回復原始狀態</button>
+</div>
+
+<script >
+let message = "hello";
+
+let x = "新垣結衣<img src='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/133722196-424581671913785-5063788763890314330-n-1621574150.jpg?crop=0.647xw:1.00xh;0.178xw,0&resize=640:*'width='70' height='70'>";
+let y = "NewJeans<img src='https://im.marieclaire.com.tw/s800c450h100b0/assets/mc/202207/62E3EBB2849601659104178.jpeg' width='140' height='70'>";
+
+document.querySelector("#result1").innerHTML = x;
+document.querySelector("#result2").innerHTML = y;
+document.querySelector("#result2").style.width = result_y + "px";
+
+function show(){
+	let result_x = document.querySelector("#x").value;
+	let result_y = document.querySelector("#y").value;
+	document.querySelector("#result1").style.width = result_x+"px"
+	document.querySelector("#result2").style.width = result_y+"px"
+}
+
+function cancel(){
+	let result_x = document.querySelector("#x").value;
+	let result_y = document.querySelector("#y").value;
+	document.querySelector("#result1").style.width = "100px"
+	document.querySelector("#result2").style.width = "100px"
+}
+</script>
